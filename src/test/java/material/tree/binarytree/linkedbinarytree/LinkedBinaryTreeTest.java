@@ -9,26 +9,45 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+/**
+ *
+ * @author Asus
+ */
 public class LinkedBinaryTreeTest {
     
     private LinkedBinaryTree<Integer> instance;
     private FactoryNode<Integer> nodeFactory = new FactoryNode<> ();
     private static final int RAIZ = 1;
     
+    /**
+     *
+     */
     public LinkedBinaryTreeTest() {}
     
+    /**
+     *
+     */
     @BeforeClass
     public static void setUpClass() {}
     
+    /**
+     *
+     */
     @AfterClass
     public static void tearDownClass() {}
     
+    /**
+     *
+     */
     @Before
     public void setUp() {
         instance = new LinkedBinaryTree <>(nodeFactory);
         instance.addRoot(RAIZ);
     }
     
+    /**
+     *
+     */
     @After
     public void tearDown() {}
 
@@ -47,8 +66,6 @@ public class LinkedBinaryTreeTest {
         Position<Integer> e = instance.insertLeft(c, 7);
         
         BTNode<Integer> hermano = instance.checkPosition(instance.sibling(d));
-        
-        System.out.println(hermano.element());
 
     }
 
@@ -71,10 +88,7 @@ public class LinkedBinaryTreeTest {
         List<Position<Integer>> pos = (List<Position<Integer>>) instance.positions();
         
         for(Position<Integer> v : pos){
-            System.out.print(v.element() + " ");
         }
-        
-        System.out.println("\nElemento borrado: " + sol);
         
         assertTrue(pos.size()==5);
         
@@ -85,8 +99,6 @@ public class LinkedBinaryTreeTest {
      */
     @Test
     public void testAttach() {
-        
-        System.out.println("attach");
     
         Position<Integer> a = instance.insertRight(instance.root(), 2);
         Position<Integer> b = instance.insertRight(a, 3);
@@ -107,7 +119,6 @@ public class LinkedBinaryTreeTest {
         List<Position<Integer>> pos = (List<Position<Integer>>) instance.positions();
         
         for(Position<Integer> v : pos){
-            System.out.print(v.element() + " ");
         }
         
         assertTrue(instance.size()==10);

@@ -10,24 +10,43 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+/**
+ *
+ * @author Asus
+ */
 public class ArrayBinaryTreeTest {
     
     private ArrayBinaryTree<Integer> instance;
     private static final int RAIZ = 20;
     
+    /**
+     *
+     */
     public ArrayBinaryTreeTest() {}
     
+    /**
+     *
+     */
     @BeforeClass
     public static void setUpClass() {}
     
+    /**
+     *
+     */
     @AfterClass
     public static void tearDownClass() {}
     
+    /**
+     *
+     */
     @Before
     public void setUp() {
         instance = new ArrayBinaryTree <> (); 
     }
     
+    /**
+     *
+     */
     @After
     public void tearDown() {}
 
@@ -36,8 +55,6 @@ public class ArrayBinaryTreeTest {
      */
     @Test
     public void testSize() {
-        
-        System.out.println("size");
     
         instance.addRoot(RAIZ); 
         Position<Integer> a = instance.insertLeft(instance.root(), 30);
@@ -53,8 +70,6 @@ public class ArrayBinaryTreeTest {
      */
     @Test
     public void testIsEmpty() {
-        
-        System.out.println("isEmpty");
     
         assertTrue(instance.isEmpty());
         
@@ -69,8 +84,6 @@ public class ArrayBinaryTreeTest {
      */
     @Test
     public void testIterator() {
-        
-        System.out.println("iterator");
     
         instance.addRoot(RAIZ); 
         
@@ -87,8 +100,6 @@ public class ArrayBinaryTreeTest {
      */
     @Test
     public void testPositions() {
-        
-        System.out.println("positions");
     
         instance.addRoot(RAIZ); 
         Position<Integer> a = instance.insertLeft(instance.root(), 30);
@@ -98,7 +109,6 @@ public class ArrayBinaryTreeTest {
         List<Position<Integer>> pos = (List<Position<Integer>>) instance.positions();
         
         for(Position<Integer> v : pos){
-            System.out.print(v + " ");
         }
     
     }
@@ -108,8 +118,6 @@ public class ArrayBinaryTreeTest {
      */
     @Test
     public void testReplace() {
-        
-        System.out.println("replace");
     
         instance.addRoot(RAIZ); 
         Position<Integer> a = instance.insertLeft(instance.root(), 30);
@@ -121,7 +129,6 @@ public class ArrayBinaryTreeTest {
         List<Position<Integer>> pos = (List<Position<Integer>>) instance.positions();
         
         for(Position<Integer> v : pos){
-            System.out.print(v + " ");
         }
         
         assertTrue(b.element()==80);
@@ -134,8 +141,6 @@ public class ArrayBinaryTreeTest {
      */
     @Test
     public void testRoot() {
-        
-        System.out.println("root");
     
         instance.addRoot(RAIZ); 
         
@@ -150,8 +155,6 @@ public class ArrayBinaryTreeTest {
      */
     @Test
     public void testParent() {
-        
-        System.out.println("parent");
         
         instance.addRoot(RAIZ); 
         Position<Integer> a = instance.insertLeft(instance.root(), 30);
@@ -180,11 +183,8 @@ public class ArrayBinaryTreeTest {
         Position<Integer> prueba = instance.root();
         
         List<Position<Integer>> pos = (List<Position<Integer>>) instance.children(prueba);
-    
-        System.out.print("Hijos de " + prueba + " : " );
         
         for(Position<Integer> v : pos){
-            System.out.print(v + " ");
         }
      
     }
@@ -194,8 +194,6 @@ public class ArrayBinaryTreeTest {
      */
     @Test
     public void testIsInternal() {
-        
-        System.out.println("isInternal");
         
         instance.addRoot(RAIZ); 
         Position<Integer> a = instance.insertLeft(instance.root(), 30);
@@ -211,8 +209,6 @@ public class ArrayBinaryTreeTest {
      */
     @Test
     public void testIsLeaf() {
-        
-        System.out.println("isLeaf");
         
         instance.addRoot(RAIZ); 
         Position<Integer> a = instance.insertLeft(instance.root(), 30);
@@ -230,8 +226,6 @@ public class ArrayBinaryTreeTest {
     @Test
     public void testIsRoot() {
         
-        System.out.println("isRoot");
-        
         instance.addRoot(RAIZ); 
         Position<Integer> a = instance.insertLeft(instance.root(), 30);
         Position<Integer> b = instance.insertRight(instance.root(), 40);
@@ -246,8 +240,6 @@ public class ArrayBinaryTreeTest {
      */
     @Test
     public void testLeft() {
-        
-        System.out.println("left");
         
         instance.addRoot(RAIZ); 
         Position<Integer> a = instance.insertLeft(instance.root(), 30);
@@ -266,7 +258,6 @@ public class ArrayBinaryTreeTest {
      */
     @Test
     public void testRight() {
-        System.out.println("right");
         
         instance.addRoot(RAIZ); 
         Position<Integer> a = instance.insertLeft(instance.root(), 30);
@@ -285,8 +276,6 @@ public class ArrayBinaryTreeTest {
     @Test
     public void testHasLeft() {
         
-        System.out.println("hasLeft");
-        
         instance.addRoot(RAIZ); 
         Position<Integer> a = instance.insertLeft(instance.root(), 30);
         Position<Integer> b = instance.insertRight(instance.root(), 40);
@@ -301,8 +290,6 @@ public class ArrayBinaryTreeTest {
      */
     @Test
     public void testHasRight() {
-        
-        System.out.println("hasRight");
         
         instance.addRoot(RAIZ); 
         Position<Integer> a = instance.insertLeft(instance.root(), 30);
@@ -330,8 +317,6 @@ public class ArrayBinaryTreeTest {
         Position <Integer> prueba = a;
         
         BTPos<Integer> hermano = instance.checkPosition(instance.sibling(prueba));
-        
-        System.out.println("Hermano de " + prueba + " : " + hermano);
     
     }
     
@@ -359,10 +344,7 @@ public class ArrayBinaryTreeTest {
         List<Position<Integer>> pos = (List<Position<Integer>>) instance.positions();
         
         for(Position<Integer> v : pos){
-            System.out.print(v + " ");
         }
-        
-        System.out.println("\nElementos borrados: " + sol + ", " + sol1 + ", " + sol2);
         
         assertTrue(pos.size()==3);
         
@@ -373,8 +355,6 @@ public class ArrayBinaryTreeTest {
      */
     @Test
     public void testAttach() {
-        
-        System.out.println("attach");
     
         instance.addRoot(RAIZ); 
         Position<Integer> a = instance.insertLeft(instance.root(), 30);
@@ -393,7 +373,6 @@ public class ArrayBinaryTreeTest {
         List<Position<Integer>> pos = (List<Position<Integer>>) instance.positions();
         
         for(Position<Integer> v : pos){
-            System.out.print(v + " ");
         }
         
         assertTrue(instance.size()==7);

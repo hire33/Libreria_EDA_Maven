@@ -3,6 +3,11 @@ package material.tree.binarysearchtree;
 import java.util.Comparator;
 import material.ordereddictionary.BSTDictEntry;
 
+/**
+ *
+ * @author Asus
+ * @param <E>
+ */
 public class ODInsertComparator<E> implements Comparator<E>{
 
     /**

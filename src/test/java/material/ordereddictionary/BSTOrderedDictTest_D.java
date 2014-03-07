@@ -5,42 +5,58 @@ import material.maps.Entry;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
+/**
+ *
+ * @author Asus
+ */
 public class BSTOrderedDictTest_D {
 
-	@Test
+	/**
+     *
+     */
+    @Test
 	public void testSize() {
 		OrderedDictionary <String,Integer> dict = new BSTOrderedDictionary <>();
 		assertEquals(dict.size(),0);
-		dict.insert("Angel", 9151592);
+		dict.insert("Angel", 9_151_592);
 		assertEquals(dict.size(),1);
-		dict.insert("Angel", 9151591);
+		dict.insert("Angel", 9_151_591);
 		assertEquals(dict.size(),2);
-		dict.insert("Jose",  9100000);	
+		dict.insert("Jose", 9_100_000);	
 		assertEquals(dict.size(),3);
 	}
 
-	@Test
+	/**
+     *
+     */
+    @Test
 	public void testIsEmpty() {
 		OrderedDictionary <String,Integer> dict = new BSTOrderedDictionary <>();
 		assertEquals(dict.isEmpty(),true);
-		dict.insert("Angel", 9151592);
+		dict.insert("Angel", 9_151_592);
 		assertEquals(dict.isEmpty(),false);
 	}
 
-	@Test
+	/**
+     *
+     */
+    @Test
 	public void testFind() {
 		OrderedDictionary <String,Integer> dict = new BSTOrderedDictionary <>();
-		dict.insert("Angel", 9151592);
-		dict.insert("Angel", 9151591);
-		dict.insert("Jose",  9100000);
+		dict.insert("Angel", 9_151_592);
+		dict.insert("Angel", 9_151_591);
+		dict.insert("Jose", 9_100_000);
 		Entry <String,Integer> contacto = dict.find("Angel");
-		assertEquals(contacto.getValue().intValue(),9151592);		
+		assertEquals(contacto.getValue().intValue(), 9_151_592);		
 	}
 
-	@Test
+	/**
+     *
+     */
+    @Test
 	public void testFindAll() {
 		OrderedDictionary <String,Integer> dict = new BSTOrderedDictionary <>();
-		int [] telefono = {9151592,9151591,9151593};		
+		int [] telefono = {9_151_592, 9_151_591, 9_151_593};		
 		dict.insert("Angel", telefono[0]);
 		dict.insert("Angel", telefono[1]);
 		dict.insert("Jose",  telefono[2]);
@@ -55,18 +71,24 @@ public class BSTOrderedDictTest_D {
 		}
 	}
 
-	@Test
+	/**
+     *
+     */
+    @Test
 	public void testInsert() {
 		OrderedDictionary <Integer,Integer> dict = new BSTOrderedDictionary <>();
-		for (int cont = 0; cont < 1000; cont++) {
-			dict.insert((int)(Math.random()*1000), cont);
+		for (int cont = 0; cont < 1_000; cont++) {
+			dict.insert((int)(Math.random()*1_000), cont);
 		}
 	}
 
-	@Test
+	/**
+     *
+     */
+    @Test
 	public void testRemove() {
 		OrderedDictionary <String,Integer> dict = new BSTOrderedDictionary <>();
-		int [] telefono = {9151592,9151591,9151593};		
+		int [] telefono = {9_151_592, 9_151_591, 9_151_593};		
 		dict.insert("Angel", telefono[0]);
 		dict.insert("Angel", telefono[1]);
 		dict.insert("Jose",  telefono[2]);
@@ -83,22 +105,28 @@ public class BSTOrderedDictTest_D {
 		assertEquals(dict.size(),0);
 	}
 
-	@Test
+	/**
+     *
+     */
+    @Test
 	public void testRemoveUno() {
 		OrderedDictionary <String,Integer> dict = new BSTOrderedDictionary <>();
-		dict.insert("Angel", 9151592);
+		dict.insert("Angel", 9_151_592);
 		Entry <String,Integer> e = dict.find("Angel");
 		dict.remove(e);
 		Entry <String,Integer> f = dict.find("Angel");
 		assertEquals(f,null);		
 	}
 
-	@Test
+	/**
+     *
+     */
+    @Test
 	public void testRemoveDos() {
 		OrderedDictionary <String,Integer> dict = new BSTOrderedDictionary <>();
-		dict.insert("Jose", 9151590);
-		dict.insert("Angel", 9151592);
-		dict.insert("Angel", 9151591);
+		dict.insert("Jose", 9_151_590);
+		dict.insert("Angel", 9_151_592);
+		dict.insert("Angel", 9_151_591);
 		Entry <String,Integer> e0 = dict.find("Jose");
 		Entry <String,Integer> e1 = dict.find("Angel");
 		Entry <String,Integer> e2 = dict.find("Angel");

@@ -10,11 +10,22 @@ import material.tree.exceptions.EmptyTreeException;
 import material.tree.exceptions.InvalidPositionException;
 import material.tree.exceptions.NonEmptyTreeException;
 
+/**
+ *
+ * @author Asus
+ * @param <E>
+ */
 public class LCRSTree <E> implements Tree <E> {
     
     //Atributos.
     
+    /**
+     *
+     */
     protected LCRSNode <E> root;
+    /**
+     *
+     */
     protected int size;
     
     //Constructores.
@@ -122,6 +133,12 @@ public class LCRSTree <E> implements Tree <E> {
     
     //Métodos adicionales.
     
+    /**
+     *
+     * @param e
+     * @return
+     * @throws NonEmptyTreeException
+     */
     public Position<E> addRoot(E e) throws NonEmptyTreeException {
         if (!this.isEmpty()) {
             throw new NonEmptyTreeException("Tree already has a root");
@@ -131,6 +148,13 @@ public class LCRSTree <E> implements Tree <E> {
         return this.root;
     }
 
+    /**
+     *
+     * @param posParent
+     * @param element
+     * @return
+     * @throws InvalidPositionException
+     */
     public Position<E> add(Position<E> posParent, E element)
             throws InvalidPositionException {
         LCRSNode<E> parent = this.checkPosition(posParent);
@@ -186,6 +210,12 @@ public class LCRSTree <E> implements Tree <E> {
     
     //Métodos auxiliares.
     
+    /**
+     *
+     * @param p
+     * @return
+     * @throws InvalidPositionException
+     */
     public LCRSNode<E> checkPosition(Position<E> p)
             throws InvalidPositionException {
         if (p == null || !(p instanceof LCRSNode)) {
@@ -202,11 +232,25 @@ public class LCRSTree <E> implements Tree <E> {
 
     }
     
+    /**
+     *
+     * @param element
+     * @param parent
+     * @param rS
+     * @param lC
+     * @return
+     */
     protected LCRSNode<E> createNode(E element, LCRSNode<E> parent, LCRSNode<E> rS,
             LCRSNode<E> lC) {
         return new LCRSNode<>(element, parent, rS, lC);
     }
     
+    /**
+     *
+     * @param p
+     * @param pos
+     * @throws InvalidPositionException
+     */
     public void preorderPositions(Position<E> p, List<Position<E>> pos)
             throws InvalidPositionException {
         pos.add(p);

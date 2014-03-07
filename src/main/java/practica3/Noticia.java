@@ -1,8 +1,13 @@
 package practica3;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
+/**
+ *
+ * @author Asus
+ */
 public class Noticia {
     
     //Atributos.
@@ -13,12 +18,21 @@ public class Noticia {
 
     //Constructores.
     
+    /**
+     *
+     */
     public Noticia (){
         this.titulo="";
         this.listaEntidades = new ArrayList<>();
         this.entidadMasNombrada = new Entidad ();
     }
     
+    /**
+     *
+     * @param titulo
+     * @param listaEntidades
+     * @param entidadMasNombrada
+     */
     public Noticia(String titulo, List <Entidad> listaEntidades, Entidad entidadMasNombrada) {
         this.titulo = titulo;
         this.listaEntidades = listaEntidades;
@@ -27,26 +41,50 @@ public class Noticia {
 
     //Getter & Setter.
     
+    /**
+     *
+     * @return
+     */
     public String getTitulo() {
         return titulo;
     }
 
+    /**
+     *
+     * @param titulo
+     */
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
 
+    /**
+     *
+     * @return
+     */
     public List<Entidad> getListaEntidades() {
-        return listaEntidades;
+        return Collections.unmodifiableList(listaEntidades);
     }
 
+    /**
+     *
+     * @param listaEntidades
+     */
     public void setListaEntidades(List<Entidad> listaEntidades) {
         this.listaEntidades = listaEntidades;
     }
 
+    /**
+     *
+     * @return
+     */
     public Entidad getEntidadMasNombrada() {
         return entidadMasNombrada;
     }
 
+    /**
+     *
+     * @param entidadMasNombrada
+     */
     public void setEntidadMasNombrada(Entidad entidadMasNombrada) {
         this.entidadMasNombrada = entidadMasNombrada;
     }

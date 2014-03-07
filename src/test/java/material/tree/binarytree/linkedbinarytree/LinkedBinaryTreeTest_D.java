@@ -4,9 +4,16 @@ import material.tree.Position;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
+/**
+ *
+ * @author Asus
+ */
 public class LinkedBinaryTreeTest_D {
 
-	@Test
+	/**
+     *
+     */
+    @Test
 	public void testSize() {
 		LinkedBinaryTree <String> t = new LinkedBinaryTree <>(new FactoryNode<String>());
 		Position <String> p = t.addRoot("+");
@@ -17,13 +24,19 @@ public class LinkedBinaryTreeTest_D {
 		assertEquals(t.size(), 5);
 	}
 
-	@Test
+	/**
+     *
+     */
+    @Test
 	public void testIsEmpty() {
 		LinkedBinaryTree <String> t = new LinkedBinaryTree <>(new FactoryNode<String>());
 		assertEquals(t.isEmpty(), true);
 	}
 
-	@Test
+	/**
+     *
+     */
+    @Test
 	public void testPositions() {
 		LinkedBinaryTree <String> t = new LinkedBinaryTree <>(new FactoryNode<String>());
 		Position <String> p = t.addRoot("+");
@@ -36,7 +49,10 @@ public class LinkedBinaryTreeTest_D {
 		assertEquals(salida, "+23");
 	}
 
-	@Test
+	/**
+     *
+     */
+    @Test
 	public void testRemove() {
 		LinkedBinaryTree <String> t = new LinkedBinaryTree <>(new FactoryNode<String>());
 		Position <String> p = t.addRoot("+");
@@ -49,7 +65,10 @@ public class LinkedBinaryTreeTest_D {
 		
 	}
 
-	@Test
+	/**
+     *
+     */
+    @Test
 	public void testSwapElements() {
 		LinkedBinaryTree <String> t = new LinkedBinaryTree <>(new FactoryNode<String>());
 		Position <String> p = t.addRoot("+");

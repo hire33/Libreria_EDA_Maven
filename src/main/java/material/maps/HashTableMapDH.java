@@ -2,6 +2,12 @@ package material.maps;
 import java.util.List;
 import material.maps.exceptions.InvalidKeyException;
 
+/**
+ *
+ * @author Asus
+ * @param <K>
+ * @param <V>
+ */
 public class HashTableMapDH <K,V> extends AbstractHashTableMap <K,V> {
     
     //Atributos.
@@ -10,6 +16,12 @@ public class HashTableMapDH <K,V> extends AbstractHashTableMap <K,V> {
     
     //Constructores.
     
+    /**
+     *
+     * @param p
+     * @param cap
+     * @param auxiliarPrime
+     */
     public HashTableMapDH(int p, int cap, int auxiliarPrime){
         super(p, cap);
         this.auxiliarPrime=auxiliarPrime;

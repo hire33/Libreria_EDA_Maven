@@ -19,7 +19,7 @@ abstract class AbstractHashTableMap <K,V> implements Map <K,V> {
 
         //Constructores.
         
-        public HashEntryPosition(int index, AbstractHashTableMap.OperationType operation) {
+        HashEntryPosition(int index, AbstractHashTableMap.OperationType operation) {
             super();
             this.index = index;
             this.operation = operation;
@@ -40,23 +40,23 @@ abstract class AbstractHashTableMap <K,V> implements Map <K,V> {
     /**
      * Creates a hash table with prime factor 109345121 and capacity 1000.
      */
-    public AbstractHashTableMap() {
-        this(109345121, 1000); // reusing the constructor HashTableMap(int p,
+    AbstractHashTableMap() {
+        this(109_345_121, 1_000); // reusing the constructor HashTableMap(int p,
         // int cap)
     }
 
     /**
      * Creates a hash table with prime factor 109345121 and given capacity.
      */
-    public AbstractHashTableMap(int cap) {
-        this(109345121, cap); // reusing the constructor HashTableMap(int p, int
+    AbstractHashTableMap(int cap) {
+        this(109_345_121, cap); // reusing the constructor HashTableMap(int p, int
         // cap)
     }
 
     /**
      * Creates a hash table with the given prime factor and capacity.
      */
-    public AbstractHashTableMap(int p, int cap) {
+    AbstractHashTableMap(int p, int cap) {
        
         //AVAILABLE y n ya se encuentran inicializadas.
         

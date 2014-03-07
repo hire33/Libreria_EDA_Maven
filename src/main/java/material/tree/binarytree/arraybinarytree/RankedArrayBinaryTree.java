@@ -10,15 +10,29 @@ import material.tree.exceptions.EmptyTreeException;
 import material.tree.exceptions.InvalidPositionException;
 import material.tree.exceptions.NonEmptyTreeException;
 
+/**
+ *
+ * @author Asus
+ * @param <E>
+ */
 public class RankedArrayBinaryTree<E> implements BinaryTree<E> {
 
     //Atributos.
     
+    /**
+     *
+     */
     protected ArrayList<BTPos<E>> tree; // indexed list of tree positions
+    /**
+     *
+     */
     protected int size;
 
     //Constructores.
     
+    /**
+     *
+     */
     public RankedArrayBinaryTree() {
         this.tree = new ArrayList<>();
         this.size = 0;
@@ -185,6 +199,13 @@ public class RankedArrayBinaryTree<E> implements BinaryTree<E> {
         return tree.get(arrayPos(1));
     }
         
+    /**
+     *
+     * @param p
+     * @param e
+     * @return
+     * @throws InvalidPositionException
+     */
     public Position<E> insertLeft(Position<E> p, E e)
             throws InvalidPositionException {
         BTPos<E> parent = checkPosition(p);
@@ -205,6 +226,13 @@ public class RankedArrayBinaryTree<E> implements BinaryTree<E> {
         return w;
     }
     
+    /**
+     *
+     * @param p
+     * @param e
+     * @return
+     * @throws InvalidPositionException
+     */
     public Position<E> insertRight(Position<E> p, E e)
             throws InvalidPositionException {
         BTPos<E> parent = checkPosition(p);
@@ -227,6 +255,12 @@ public class RankedArrayBinaryTree<E> implements BinaryTree<E> {
         
     // Auxiliary methods
     
+    /**
+     *
+     * @param p
+     * @return
+     * @throws InvalidPositionException
+     */
     protected BTPos<E> checkPosition(Position<E> p)
             throws InvalidPositionException {
         if (p == null || !(p instanceof BTPos)) {
@@ -235,10 +269,22 @@ public class RankedArrayBinaryTree<E> implements BinaryTree<E> {
         return (BTPos<E>) p;
     }
     
+    /**
+     *
+     * @param element
+     * @param i
+     * @return
+     */
     protected BTPos<E> createNode(E element, int i) {
         return new BTPos<>(element, i);
     }
     
+    /**
+     *
+     * @param v
+     * @param pos
+     * @throws InvalidPositionException
+     */
     protected void preorderPositions(Position<E> v, List<Position<E>> pos)
             throws InvalidPositionException {
         pos.add(v);

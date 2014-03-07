@@ -1,8 +1,16 @@
 package material.maps.exceptions;
 
 
+/**
+ *
+ * @author Asus
+ */
 public class InvalidEntryException  extends RuntimeException {
-  public InvalidEntryException (String message) {
+    /**
+     *
+     * @param message
+     */
+    public InvalidEntryException (String message) {
     super (message);
   }
 }

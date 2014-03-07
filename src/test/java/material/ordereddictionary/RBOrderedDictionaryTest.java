@@ -12,23 +12,42 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+/**
+ *
+ * @author Asus
+ */
 public class RBOrderedDictionaryTest {
     
     private RBOrderedDictionary<Integer, String> instance;
     
+    /**
+     *
+     */
     public RBOrderedDictionaryTest() {}
     
+    /**
+     *
+     */
     @BeforeClass
     public static void setUpClass() {}
     
+    /**
+     *
+     */
     @AfterClass
     public static void tearDownClass() {}
     
+    /**
+     *
+     */
     @Before
     public void setUp() {
         instance = new RBOrderedDictionary();
     }
     
+    /**
+     *
+     */
     @After
     public void tearDown() {}
 
@@ -37,8 +56,6 @@ public class RBOrderedDictionaryTest {
      */
     @Test
     public void testSize() {
-        
-        System.out.println("size");
         
         instance.insert(20, "hola");
         instance.insert(40, "iglu");
@@ -52,8 +69,6 @@ public class RBOrderedDictionaryTest {
      */
     @Test
     public void testIsEmpty() {
-        
-        System.out.println("isEmpty");
 
         assertTrue(instance.isEmpty());
         
@@ -80,8 +95,6 @@ public class RBOrderedDictionaryTest {
         System.out.println(instance.entries());
         
         Entry prueba = instance.find(40);
-        
-        System.out.println("Entrada buscada: " + prueba);
                 
     }
 
@@ -100,10 +113,6 @@ public class RBOrderedDictionaryTest {
         instance.insert(50, "mano");
         
         System.out.println(instance.entries());
-        
-        //Uso del método toString por defecto.
-        
-        System.out.println("Entrada buscadas: " + instance.findAll(40));
     
     }
     
@@ -122,10 +131,6 @@ public class RBOrderedDictionaryTest {
         instance.insert(50, "mano");
         
         System.out.println(instance.entries());
-        
-        //Uso del método toString por defecto.
-        
-        System.out.println("Entradas buscadas: " + instance.findRange(9, 2));
     
     }
 
@@ -142,8 +147,6 @@ public class RBOrderedDictionaryTest {
         instance.insert(40, "iglu");
         instance.insert(40, "isla");
         instance.insert(50, "mano");
-                
-        System.out.println(instance.entries());
         
     }
 
@@ -178,7 +181,6 @@ public class RBOrderedDictionaryTest {
         imprimirRB();
         
         instance.remove(tR2);
-        System.out.println("Entrada borrada: " + tR2);
         imprimirRB();
              
     }
@@ -196,8 +198,6 @@ public class RBOrderedDictionaryTest {
         instance.insert(40, "iglu");
         instance.insert(40, "isla");
         instance.insert(50, "mano");
-                
-        System.out.println(instance.entries());
         
     }
     
@@ -212,15 +212,10 @@ public class RBOrderedDictionaryTest {
         for(Position<BSTDictEntry<Integer,String>> v : posI){
             RBNode<BSTDictEntry<Integer,String>> nodeAtV = (RBNode) instance.binTree.checkPosition(v);
             char isRed = nodeAtV.isRed()?'R':'B';
-            System.out.print(v.element() + "[" + isRed + "]" + " ");
         }
         System.out.print("\nComprobando reestructuraciones...\n");
         for(Position<BSTDictEntry<Integer,String>> v : posP){
-            System.out.print(v.element() + " ");
         }
-        System.out.println("\n");   
-             
-        //FIN Salida por pantalla.
     
     }
 

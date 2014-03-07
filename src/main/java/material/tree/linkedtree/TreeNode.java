@@ -1,9 +1,15 @@
 package material.tree.linkedtree;
 
+import java.util.Collections;
 import java.util.List;
 import material.tree.Position;
 
-public class TreeNode<E> implements Position<E> {
+/**
+ *
+ * @author Asus
+ * @param <E>
+ */
+public final class TreeNode<E> implements Position<E> {
 	
     //Atributos.
     
@@ -44,7 +50,7 @@ public class TreeNode<E> implements Position<E> {
      * Returns the children of this position
      */
     public List<TreeNode<E>> getChildren() {
-        return children;
+        return Collections.unmodifiableList(children);
     }
 
     /**

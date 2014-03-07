@@ -2,6 +2,12 @@ package material.maps;
 import java.util.List;
 import material.maps.exceptions.InvalidKeyException;
 
+/**
+ *
+ * @author Asus
+ * @param <K>
+ * @param <V>
+ */
 public class HashTableMapCP <K,V> extends AbstractHashTableMap <K,V> {
     
     //Atributos.
@@ -11,22 +17,41 @@ public class HashTableMapCP <K,V> extends AbstractHashTableMap <K,V> {
     
     //Constructores.
     
+    /**
+     *
+     */
     public HashTableMapCP(){
         super();
         constant1=0;
         constant2=1;
     }
     
+    /**
+     *
+     * @param cap
+     */
     public HashTableMapCP(int cap){
         super(cap);
         constant1=0;
         constant2=1;
     }
     
+    /**
+     *
+     * @param p
+     * @param cap
+     */
     public HashTableMapCP(int p, int cap){
         this(p, cap, 0, 1);
     }
     
+    /**
+     *
+     * @param p
+     * @param cap
+     * @param constant1
+     * @param constant2
+     */
     public HashTableMapCP(int p, int cap, int constant1, int constant2){
         super(p, cap);
         this.constant1=constant1;

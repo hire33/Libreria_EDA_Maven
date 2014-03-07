@@ -8,6 +8,10 @@ import material.tree.LCRSTree.LCRSTree;
 import material.tree.Position;
 import material.tree.exceptions.InvalidPositionException;
 
+/**
+ *
+ * @author Asus
+ */
 public class Practica1_Obligatoria_EDA {
 
     private static LCRSTree<File> almacenador = new LCRSTree<>();
@@ -52,6 +56,10 @@ public class Practica1_Obligatoria_EDA {
 
     }
                       
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         
         long tamañoTotal = 0;
@@ -79,11 +87,7 @@ public class Practica1_Obligatoria_EDA {
             Position<File> aux = it.next();
             tamañoTotal += aux.element().length();
             df = aux.element().isDirectory() ? 'd' : 'f';
-            System.out.println(aux.element().getName() + " (" + df + ") "
-                    + tamañoParcial(aux, almacenador)/1024 + "KB.");
         }
-
-        System.out.println("Tamaño total de " + prueba.getName() + " : " + tamañoTotal/1024 + "KB.");
 
     }
 

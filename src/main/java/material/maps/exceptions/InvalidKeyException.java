@@ -1,7 +1,15 @@
 package material.maps.exceptions;
 
+/**
+ *
+ * @author Asus
+ */
 public class InvalidKeyException  extends RuntimeException {
-  public InvalidKeyException (String message) {
+    /**
+     *
+     * @param message
+     */
+    public InvalidKeyException (String message) {
     super (message);
   }
 }

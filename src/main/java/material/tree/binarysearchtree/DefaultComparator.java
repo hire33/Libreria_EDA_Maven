@@ -2,6 +2,11 @@ package material.tree.binarysearchtree;
 
 import java.util.Comparator;
 
+/**
+ *
+ * @author Asus
+ * @param <E>
+ */
 public class DefaultComparator<E> implements Comparator<E> {
 
     /**

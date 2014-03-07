@@ -10,6 +10,10 @@ import material.maps.Entry;
 import material.maps.HashTableMapLP;
 import material.maps.Map;
 
+/**
+ *
+ * @author Asus
+ */
 public class Practica3_Obligatoria_EDA {
     
     /**
@@ -32,6 +36,11 @@ public class Practica3_Obligatoria_EDA {
             
     }
     
+    /**
+     *
+     * @param nombre
+     * @return
+     */
     public static String leerTitulo(String nombre) {
         File f;
         FileReader lectorArchivo;
@@ -43,17 +52,21 @@ public class Practica3_Obligatoria_EDA {
                 String aux;
                 aux = br.readLine();
                 if (aux != null) {
-                    l = l + aux;
+                    l += aux;
                 } 
             }
             lectorArchivo.close();
             return l;
         } catch (IOException e) {
-            System.out.println("Error: " + e.getMessage());
         }
         return null;
     }
  
+    /**
+     *
+     * @param nombre
+     * @return
+     */
     public static String leer(String nombre) {
         File f;
         FileReader lectorArchivo;
@@ -75,7 +88,6 @@ public class Practica3_Obligatoria_EDA {
             lectorArchivo.close();
             return l;
         } catch (IOException e) {
-            System.out.println("Error: " + e.getMessage());
         }
         return null;
     }
@@ -242,9 +254,7 @@ public class Practica3_Obligatoria_EDA {
         Iterable<Entry<String,List<String>>> listaEntradas = analisisEMN.entrySet();
         
         for(Entry<String, List<String>> v : listaEntradas){
-            System.out.println(v.getKey());
             for(String s : v.getValue()){
-                System.out.println("*[" + s + "]");
             }
         }
         

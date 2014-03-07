@@ -4,9 +4,16 @@ import material.tree.Position;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
+/**
+ *
+ * @author Asus
+ */
 public class RBTreeTest_D {
 
-	@Test
+	/**
+     *
+     */
+    @Test
 	public void testSize() {
 		RBTree <Integer> b = new RBTree <>(new FactoryRBNode<Integer>());
 		assertEquals(b.size(), 0);
@@ -22,7 +29,10 @@ public class RBTreeTest_D {
 		assertEquals(b.size(), 27);		
 	}
 
-	@Test
+	/**
+     *
+     */
+    @Test
 	public void testFind() {
 		RBTree <Integer> b = new RBTree <>(new FactoryRBNode<Integer>());
 		
@@ -40,7 +50,10 @@ public class RBTreeTest_D {
 		assertEquals(p,null);
 	}
 
-	@Test
+	/**
+     *
+     */
+    @Test
 	public void testInsert() {
 		RBTree <Integer> b = new RBTree <>(new FactoryRBNode<Integer>());
 		b.insert(5);
@@ -80,7 +93,10 @@ public class RBTreeTest_D {
 
 	}
 
-	@Test
+	/**
+     *
+     */
+    @Test
 	public void testRemove() {
 		RBTree <Integer> b = new RBTree <>(new FactoryRBNode<Integer>());
 		b.insert(5);

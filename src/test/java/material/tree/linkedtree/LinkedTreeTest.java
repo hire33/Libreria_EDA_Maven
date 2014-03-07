@@ -9,25 +9,44 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+/**
+ *
+ * @author Asus
+ */
 public class LinkedTreeTest {
     
     private LinkedTree<Integer> instance;
     private static final int RAIZ = 3;
         
+    /**
+     *
+     */
     public LinkedTreeTest() {}
     
+    /**
+     *
+     */
     @BeforeClass
     public static void setUpClass() {}
     
+    /**
+     *
+     */
     @AfterClass
     public static void tearDownClass() {}
     
+    /**
+     *
+     */
     @Before
     public void setUp() {
         instance = new LinkedTree <>();
         instance.addRoot(RAIZ);
     }
     
+    /**
+     *
+     */
     @After
     public void tearDown() {}
 
@@ -37,14 +56,11 @@ public class LinkedTreeTest {
     @Test 
     public void testAdd() {
         
-        System.out.println("add");
-        
         instance.add(instance.root, 7);
           
         List<Position<Integer>> pos = (List<Position<Integer>>) instance.positions();
         
         for(Position<Integer> v : pos){
-            System.out.print(v.element() + " ");
         }
         
         assertTrue(pos.get(1).element()==7);
@@ -58,8 +74,6 @@ public class LinkedTreeTest {
     @Test //(expected = InvalidPositionException.class)
     public void testSwapElements() {
         
-        System.out.println("swapElements");
-        
         Position<Integer> w = instance.add(instance.root, 12);
         
         instance.swapElements(instance.root, w);
@@ -71,7 +85,6 @@ public class LinkedTreeTest {
         List<Position<Integer>> pos = (List<Position<Integer>>) instance.positions();
         
         for(Position<Integer> v : pos){
-            System.out.print(v.element() + " ");
         }
         
         assertTrue(instance.root.element()==12);
@@ -85,8 +98,6 @@ public class LinkedTreeTest {
     @Test 
     public void testRemove() {
         
-        System.out.println("remove");
-        
         Position<Integer> a = instance.add(instance.root, 7);
         Position<Integer> b = instance.add(a, 5);
         Position<Integer> c = instance.add(a, 8);
@@ -98,7 +109,6 @@ public class LinkedTreeTest {
         List<Position<Integer>> pos = (List<Position<Integer>>) instance.positions();
         
         for(Position<Integer> v : pos){
-            System.out.print(v.element() + " ");
         }
         
         //assertTrue(instance.isEmpty());

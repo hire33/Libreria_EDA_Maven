@@ -10,23 +10,42 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+/**
+ *
+ * @author Asus
+ */
 public class BinarySearchTreeTest {
     
     private BinarySearchTree<Integer> instance;
     
+    /**
+     *
+     */
     public BinarySearchTreeTest() {}
     
+    /**
+     *
+     */
     @BeforeClass
     public static void setUpClass() {}
     
+    /**
+     *
+     */
     @AfterClass
     public static void tearDownClass() {}
     
+    /**
+     *
+     */
     @Before
     public void setUp() {
         instance = new BinarySearchTree <>(new FactoryNode<Integer>());
     }
     
+    /**
+     *
+     */
     @After
     public void tearDown() {}
 
@@ -35,8 +54,6 @@ public class BinarySearchTreeTest {
      */
     @Test
     public void testInsert() {
-        
-        System.out.println("insert");
 
         instance.insert(20);
         instance.insert(10);
@@ -46,7 +63,6 @@ public class BinarySearchTreeTest {
         List<Position<Integer>> pos = (List<Position<Integer>>) instance.positions();
         
         for(Position<Integer> v : pos){
-            System.out.print(v.element() + " ");
         }
           
     }
@@ -57,8 +73,6 @@ public class BinarySearchTreeTest {
     @Test
     public void testGetLeafToRemove() {
         
-        System.out.println("getLeafToRemove");
-        
         Position<Integer> insert = instance.insert(20);
         instance.insert(10);
         Position<Integer> prueba = instance.insert(40);
@@ -67,7 +81,6 @@ public class BinarySearchTreeTest {
         List<Position<Integer>> pos = (List<Position<Integer>>) instance.positions();
         
         for(Position<Integer> v : pos){
-            System.out.print(v.element() + " ");
         }
         
         assertTrue(instance.getLeafToRemove(insert)==instance.binTree.left(prueba));

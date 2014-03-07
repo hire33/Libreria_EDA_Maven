@@ -5,20 +5,46 @@ import java.util.Iterator;
 import java.util.List;
 import material.maps.exceptions.InvalidKeyException;
 
+/**
+ *
+ * @author Asus
+ * @param <K>
+ * @param <V>
+ */
 public class HashTableMapSC<K, V> implements Map<K, V> {
 
     //Atributos (6).
+    /**
+     *
+     */
     protected List<HashEntry<K, V>>[] bucket;// bucket array
+    /**
+     *
+     */
     protected int n = 0; // number of entries in the dictionary
-    protected int prime, capacity; // prime factor and capacity of bucket array
-    protected long scale, shift; // the shift and scaling factors
+    /**
+     *
+     */
+    protected int prime,
+    /**
+     *
+     */
+    capacity; // prime factor and capacity of bucket array
+    /**
+     *
+     */
+    protected long scale,
+    /**
+     *
+     */
+    shift; // the shift and scaling factors
 
     //Constructores.
     /**
      * Creates a hash table with prime factor 109345121 and capacity 1000.
      */
     public HashTableMapSC() {
-        this(109345121, 1000); // reusing the constructor HashTableMapSC(int p,
+        this(109_345_121, 1_000); // reusing the constructor HashTableMapSC(int p,
         // int cap)
     }
 
@@ -26,7 +52,7 @@ public class HashTableMapSC<K, V> implements Map<K, V> {
      * Creates a hash table with prime factor 109345121 and given capacity.
      */
     public HashTableMapSC(int cap) {
-        this(109345121, cap); // reusing the constructor HashTableMapSC(int p, int
+        this(109_345_121, cap); // reusing the constructor HashTableMapSC(int p, int
         // cap)
     }
 
@@ -170,6 +196,9 @@ public class HashTableMapSC<K, V> implements Map<K, V> {
 
     //Métodos adicionales.
     
+    /**
+     *
+     */
     protected void rehash() {
         int doubleCapacity = this.capacity*2;
         

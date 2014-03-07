@@ -1,14 +1,31 @@
 package material.maps;
 
+/**
+ *
+ * @author Asus
+ * @param <K>
+ * @param <V>
+ */
 public class HashEntry<K, V> implements Entry<K, V> {
 
     //Atributos.
     
+    /**
+     *
+     */
     protected K key;
+    /**
+     *
+     */
     protected V value;
 
     //Constructores.
     
+    /**
+     *
+     * @param k
+     * @param v
+     */
     public HashEntry(K k, V v) {
         key = k;
         value = v;
@@ -26,6 +43,11 @@ public class HashEntry<K, V> implements Entry<K, V> {
         return key;
     }
 
+    /**
+     *
+     * @param val
+     * @return
+     */
     public V setValue(V val) {
         V oldValue = value;
         value = val;

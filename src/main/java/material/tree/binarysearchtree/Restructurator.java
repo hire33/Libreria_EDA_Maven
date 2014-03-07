@@ -6,6 +6,11 @@ import material.tree.Position;
 import material.tree.binarytree.linkedbinarytree.BTNode;
 import material.tree.binarytree.linkedbinarytree.FactoryNode;
 
+/**
+ *
+ * @author Asus
+ * @param <E>
+ */
 public class Restructurator<E> {
 
         //Atributos.
@@ -14,7 +19,11 @@ public class Restructurator<E> {
 	
         //Constructores.
         
-	public Restructurator(FactoryNode<E> factory) {
+	/**
+     *
+     * @param factory
+     */
+    public Restructurator(FactoryNode<E> factory) {
 		this.factory = factory;
 	}
         

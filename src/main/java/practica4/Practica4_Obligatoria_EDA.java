@@ -13,10 +13,19 @@ import material.maps.Map;
 import material.ordereddictionary.OrderedDictionary;
 import material.ordereddictionary.RBOrderedDictionary;
 
+/**
+ *
+ * @author Asus
+ */
 public class Practica4_Obligatoria_EDA {
 
     private static final double PORCENTAJE_APROBADOS = 0.8;
 
+    /**
+     *
+     * @param args
+     * @throws IOException
+     */
     public static void main(String[] args) throws IOException {
 
         List<Ciudad> listaCiudades = generarListaCiudades(getPathCiudades());
@@ -40,7 +49,6 @@ public class Practica4_Obligatoria_EDA {
         System.out.println("\"infraestructuras\": cualquier numero entero");
         System.out.println("\"competiciones\": cualquier numero entero");
         System.out.println("\"disciplinas\": cualquier numero entero");
-        System.out.print("\n");
 
         while (opcion != 4) {
 
@@ -54,239 +62,7 @@ public class Practica4_Obligatoria_EDA {
             try {
                 opcion = Integer.parseInt(lectura.readLine());
             } catch (IOException ex) {
-                System.out.println("Error de lectura.");
             } catch (NumberFormatException ex) {
-                System.out.println("Escriba un numero, por favor.");
-            }
-
-            switch (opcion) {
-
-                case 1:                   
-                    //<editor-fold defaultstate="collapsed" desc=" Probar criterios. ">
-                    
-                    String opcionSalida = "";
-
-                    do {
-
-                        String criterioATratar = "";
-                        boolean esCriterioValido = false;
-                        while (!esCriterioValido) {
-                            System.out.println("Los criterios a evaluar este año son: ");
-                            for (String criterio : listaCriterios) {
-                                System.out.println(criterio);
-                            }
-                            System.out.println("Escriba con que criterio desea trabajar: ");
-                            try {
-                                criterioATratar = lectura.readLine();
-                            } catch (IOException ex) {
-                                System.out.println("El criterio esta mal escrito.");
-                            }
-                            esCriterioValido = esCriterioValido(criterioATratar, listaCriterios);
-                            if (!esCriterioValido) {
-                                System.out.println("El criterio escrito no esta en la lista.");
-                                lectura.readLine();
-                            }
-                        }
-                        System.out.println("El criterio elegido es: " + criterioATratar);
-
-                        boolean parseado;
-                        Double rangoInferior = 0.0;
-                        
-                        do {
-                        
-                            parseado=true;
-                            System.out.println("Establezca el requisito minimo para el criterio: ");
-                            try {
-                                rangoInferior = Double.parseDouble(lectura.readLine());
-                            } catch (IOException ex) {
-                                System.out.println("Error de lectura.");
-                            } catch (NumberFormatException ex) {
-                                System.out.println("Escriba un numero, por favor.");
-                                parseado=false;
-                            }
-                            
-                            if(parseado){
-                                System.out.println("El requisito minimo elegido es: " + rangoInferior);
-                            }    
-                            
-                        } while(!parseado);
-                        
-                        Double rangoSuperior = 0.0;
-                        
-                        do {
-                        
-                            parseado=true;
-                            System.out.println("Establezca el requisito maximo para el criterio: ");
-                            try {
-                                rangoSuperior = Double.parseDouble(lectura.readLine());
-                            } catch (IOException ex) {
-                                System.out.println("Error de lectura.");
-                            } catch (NumberFormatException ex) {
-                                System.out.println("Escriba un numero, por favor.");
-                                parseado=false;
-                            }
-                            
-                            if(parseado){
-                                System.out.println("El requisito maximo elegido es: " + rangoSuperior);
-                            }    
-                            
-                        } while(!parseado);
-
-                        System.out.println("Procesando ciudades aprobadas...");
-                        Requisito req = new Requisito(criterioATratar, rangoInferior, rangoSuperior);
-                        List<Ciudad> listaElegidas = generarCiudadesAprobadas(listaCiudades, req);                      
-                        if(listaElegidas.isEmpty()){
-                            System.out.println("Ninguna ciudad ha aprobado.");
-                        } else {
-                            System.out.println("Las ciudades aprobadas son...");
-                            for (Ciudad c : listaElegidas) {
-                                System.out.print(c.getNombre() + ", " + c.getMapaCategorias().get(req.getCriterio()) + "; ");
-                            }
-                            System.out.print("\n");
-                        }
-
-                        do {
-
-                            System.out.println("Desea realizar otra prueba? (s/n)");
-                            try {
-                                opcionSalida = lectura.readLine();
-                            } catch (IOException ex) {
-                                System.out.println("La opción esta mal escrita.");
-                            }
-
-                        } while (!((opcionSalida.equals("n")) || (opcionSalida.equals("s"))));
-
-                    } while (opcionSalida.equals("s"));
-
-                    //</editor-fold>
-                    break;
-                case 2:
-                    //<editor-fold defaultstate="collapsed" desc=" Enviar criterios ">
-                    
-                    String opcionEnviarOtra = "";
-
-                    do {
-
-                        List<Requisito> listaRequisitos = new ArrayList<>();
-
-                        System.out.println("Bien, vamos a rellenar la ficha que debera enviar al "
-                                + "comite.");
-
-                        for (String c : listaCriterios) {
-
-                            System.out.println("Para el criterio \"" + c + "\"...");
-
-                            boolean parseado;
-                            Double rangoInferior = 0.0;
-
-                            do {
-
-                                parseado=true;
-                                System.out.println("Establezca el requisito minimo: ");
-                                try {
-                                    rangoInferior = Double.parseDouble(lectura.readLine());
-                                } catch (IOException ex) {
-                                    System.out.println("Error de lectura.");
-                                } catch (NumberFormatException ex) {
-                                    System.out.println("Escriba un numero, por favor.");
-                                    parseado=false;
-                                }
-
-                                if(parseado){
-                                    System.out.println("El requisito minimo elegido es: " + rangoInferior);
-                                }    
-
-                            } while(!parseado);
-
-                            Double rangoSuperior = 0.0;
-
-                            do {
-
-                                parseado=true;
-                                System.out.println("Establezca el requisito maximo: ");
-                                try {
-                                    rangoSuperior = Double.parseDouble(lectura.readLine());
-                                } catch (IOException ex) {
-                                    System.out.println("Error de lectura.");
-                                } catch (NumberFormatException ex) {
-                                    System.out.println("Escriba un numero, por favor.");
-                                    parseado=false;
-                                }
-
-                                if(parseado){
-                                    System.out.println("El requisito maximo elegido es: " + rangoSuperior);
-                                }    
-
-                            } while(!parseado);
-
-                            listaRequisitos.add(new Requisito(c, rangoInferior, rangoSuperior));
-
-                        }
-
-                        String opcionEnvio = "";
-
-                        do {
-
-                            System.out.println("Ha finalizado su tarea, desea enviar la ficha"
-                                    + " al comite? (s/n)");
-                            try {
-                                opcionEnvio = lectura.readLine();
-                            } catch (IOException ex) {
-                                System.out.println("La opción esta mal escrita.");
-                            }
-
-                        } while (!((opcionEnvio.equals("n")) || (opcionEnvio.equals("s"))));
-
-                        if (opcionEnvio.equals("s")) {
-                            Evaluacion toSend = new Evaluacion(listaRequisitos);
-                            listaEvaluaciones.add(toSend);
-                            System.out.println("El comite recibio la ficha.");
-                        } else {
-                            break;
-                        }
-
-                        do {
-
-                            System.out.println("Desea rellenar y enviar otra ficha? (s/n)");
-                            try {
-                                opcionEnviarOtra = lectura.readLine();
-                            } catch (IOException ex) {
-                                System.out.println("La opción esta mal escrita.");
-                            }
-
-                        } while (!((opcionEnviarOtra.equals("n")) || (opcionEnviarOtra.equals("s"))));
-
-                    } while (opcionEnviarOtra.equals("s"));
-
-                    System.out.println("Volviendo al menu...");
-
-                    //</editor-fold>
-                    break;
-                case 3:
-                    //<editor-fold defaultstate="collapsed" desc=" Mostrar ciudades candidatas ">
-                    
-                    if (listaEvaluaciones.isEmpty()) {
-                        System.out.println("El comite no recibio ninguna ficha.");
-                    } else {
-                        List<Ciudad> listaCandidatas = generarListaCiudadesCandidatas(listaEvaluaciones, listaCiudades);
-                        System.out.println("Procesando ciudades candidatas...");
-                        if(listaCandidatas.isEmpty()){
-                            System.out.println("Ninguna ciudad puede organizar los JJ00.");
-                        } else {
-                            System.out.println("Las ciudades candidatas a los JJOO son...");
-                            for (Ciudad c : listaCandidatas) {
-                                System.out.print(c.getNombre() + "; ");
-                            }
-                        }
-                        System.out.print("\n");
-                        opcion = 4; //FIN del programa.
-                    }
-                   
-                    //</editor-fold>
-                    break;
-                case 4: System.out.println("Saliendo de la aplicacion..."); break;
-                default: System.out.println("La opcion escrita no es valida.");   
-            
             }
 
         }
@@ -361,13 +137,12 @@ public class Practica4_Obligatoria_EDA {
                 String aux;
                 aux = br.readLine();
                 if (aux != null) {
-                    l = l + aux;
+                    l += aux;
                 }
             }
             lectorArchivo.close();
             return l;
         } catch (IOException e) {
-            System.out.println("Error: " + e.getMessage());
         }
         return null;
 
@@ -446,7 +221,6 @@ public class Practica4_Obligatoria_EDA {
             lectorArchivo.close();
             return mapaCategorias;
         } catch (IOException e) {
-            System.out.println("Error: " + e.getMessage());
         }
         return null;
     }

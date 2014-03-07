@@ -11,14 +11,34 @@ import material.tree.binarytree.linkedbinarytree.LinkedBinaryTree;
 import material.tree.exceptions.BoundaryViolationException;
 import material.tree.exceptions.InvalidPositionException;
 
+/**
+ *
+ * @author Asus
+ * @param <E>
+ */
 public class BinarySearchTree <E> {
 
     //Atributos.
     
+    /**
+     *
+     */
     public LinkedBinaryTree<E> binTree;
+    /**
+     *
+     */
     protected Comparator<E> insertComparator; // comparator
+    /**
+     *
+     */
     protected Comparator<E> findComparator; // comparator
+    /**
+     *
+     */
     protected FactoryNode<E> nodeFactory;
+    /**
+     *
+     */
     protected int size = 0; // number of entries
 
     //Constructores.
@@ -87,6 +107,12 @@ public class BinarySearchTree <E> {
         return l;
     }
     
+    /**
+     *
+     * @param minValue
+     * @param maxValue
+     * @return
+     */
     public Iterable<Position<E>> findRange(E minValue, E maxValue){
         List<Position<E>> l = new ArrayList<>();
         List<Position<E>> todas = (List<Position<E>>) this.positions();
