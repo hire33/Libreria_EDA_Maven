@@ -4,16 +4,9 @@ import material.tree.Position;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
-/**
- *
- * @author Asus
- */
 public class AVLTreeTest_D {
 
-	/**
-     *
-     */
-    @Test
+	@Test
 	public void testSize() {
 		AVLTree <Integer> b = new AVLTree <>(new FactoryAVLNode<Integer>());
 		assertEquals(b.size(), 0);
@@ -29,10 +22,7 @@ public class AVLTreeTest_D {
 		assertEquals(b.size(), 27);		
 	}
 
-	/**
-     *
-     */
-    @Test
+	@Test
 	public void testFind() {
 		AVLTree <Integer> b = new AVLTree <>(new FactoryAVLNode<Integer>());
 		
@@ -50,10 +40,7 @@ public class AVLTreeTest_D {
 		assertEquals(p,null);
 	}
 
-	/**
-     *
-     */
-    @Test
+	@Test
 	public void testInsert() {
 		AVLTree <Integer> b = new AVLTree <>(new FactoryAVLNode<Integer>());
 		b.insert(5);
@@ -89,10 +76,7 @@ public class AVLTreeTest_D {
 				
 	}
 
-	/**
-     *
-     */
-    @Test
+	@Test
 	public void testRemove() {
 		AVLTree <Integer> b = new AVLTree <>(new FactoryAVLNode<Integer>());
 		b.insert(5);

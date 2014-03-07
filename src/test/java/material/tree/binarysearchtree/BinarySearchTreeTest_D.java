@@ -5,16 +5,9 @@ import material.tree.binarytree.linkedbinarytree.FactoryNode;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
-/**
- *
- * @author Asus
- */
 public class BinarySearchTreeTest_D {
 
-	/**
-     *
-     */
-    @Test
+	@Test
 	public void testSize() {
 		BinarySearchTree <Integer> b = new BinarySearchTree <>(new FactoryNode<Integer>());
 		assertEquals(b.size(), 0);
@@ -30,10 +23,7 @@ public class BinarySearchTreeTest_D {
 		assertEquals(b.size(), 27);		
 	}
 
-	/**
-     *
-     */
-    @Test
+	@Test
 	public void testFind() {
 		BinarySearchTree <Integer> b = new BinarySearchTree <>(new FactoryNode<Integer>());
 		
@@ -51,10 +41,7 @@ public class BinarySearchTreeTest_D {
 		assertEquals(p,null);
 	}
 
-	/**
-     *
-     */
-    @Test
+	@Test
 	public void testInsert() {
 		BinarySearchTree <Integer> b = new BinarySearchTree <>(new FactoryNode<Integer>());
 		b.insert(5);
@@ -73,10 +60,7 @@ public class BinarySearchTreeTest_D {
 		assertEquals(salida, "531676");
 	}
 
-	/**
-     *
-     */
-    @Test
+	@Test
 	public void testRemove() {
 		BinarySearchTree <Integer> b = new BinarySearchTree <>(new FactoryNode<Integer>());
 		b.insert(5);

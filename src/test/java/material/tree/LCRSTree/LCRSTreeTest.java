@@ -10,44 +10,25 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-/**
- *
- * @author Asus
- */
 public class LCRSTreeTest {
     
     private LCRSTree<Integer> instance;
     private static final int RAIZ = 3;
     
-    /**
-     *
-     */
     public LCRSTreeTest() {}
     
-    /**
-     *
-     */
     @BeforeClass
     public static void setUpClass() {}
     
-    /**
-     *
-     */
     @AfterClass
     public static void tearDownClass() {}
     
-    /**
-     *
-     */
     @Before
     public void setUp() {
         instance = new LCRSTree <> ();
         instance.addRoot(RAIZ);
     }
     
-    /**
-     *
-     */
     @After
     public void tearDown() {}
 
@@ -56,6 +37,8 @@ public class LCRSTreeTest {
      */
     @Test
     public void testSize() {
+        
+        System.out.println("size");
         
         assertTrue(instance.size()==1);
 
@@ -66,6 +49,8 @@ public class LCRSTreeTest {
      */
     @Test
     public void testIsEmpty() {
+        
+        System.out.println("isEmpty");
        
         instance.remove(instance.root());
         
@@ -85,6 +70,8 @@ public class LCRSTreeTest {
         
         Integer elem = it.next();
         
+        System.out.println(elem);
+        
         assertTrue(elem==RAIZ);
 
     }
@@ -95,6 +82,8 @@ public class LCRSTreeTest {
     @Test
     public void testPositions() {
         
+        System.out.println("positions");
+        
         Position<Integer> a = instance.add(instance.root, 7);
         Position<Integer> b = instance.add(a, 5);
         Position<Integer> c = instance.add(a, 8);
@@ -102,6 +91,7 @@ public class LCRSTreeTest {
         List<Position<Integer>> pos = (List<Position<Integer>>) instance.positions();
         
         for(Position<Integer> v : pos){
+            System.out.print(v.element() + " ");
         }
 
     }
@@ -111,6 +101,7 @@ public class LCRSTreeTest {
      */
     @Test //(expected = InvalidPositionException.class)
     public void testReplace() {
+        System.out.println("replace");
         
         Position<Integer> a = instance.add(instance.root, 7);
         Position<Integer> b = instance.add(a, 5);
@@ -122,6 +113,7 @@ public class LCRSTreeTest {
         List<Position<Integer>> pos = (List<Position<Integer>>) instance.positions();
         
         for(Position<Integer> v : pos){
+            System.out.print(v.element() + " ");
         }
         
         assertTrue(a.element()==4);
@@ -134,6 +126,8 @@ public class LCRSTreeTest {
      */
     @Test //(expected = EmptyTreeException.class)
     public void testRoot() {
+        
+        System.out.println("root");
        
         //instance.remove(instance.root());
         //Position<Integer> z = instance.root();
@@ -150,6 +144,8 @@ public class LCRSTreeTest {
      */
     @Test //(expected = BoundaryViolationException.class)
     public void testParent() {
+        
+        System.out.println("parent");
         
         Position<Integer> a = instance.add(instance.root, 7);
         Position<Integer> b = instance.add(a, 5);
@@ -169,6 +165,8 @@ public class LCRSTreeTest {
     @Test
     public void testChildren() {
         
+        System.out.println("children");
+        
         Position<Integer> a = instance.add(instance.root, 7);
         Position<Integer> b = instance.add(a, 5);
         Position<Integer> c = instance.add(a, 8);
@@ -176,6 +174,7 @@ public class LCRSTreeTest {
         List<Position<Integer>> pos = (List<Position<Integer>>) instance.children(a);
         
         for(Position<Integer> v : pos){
+            System.out.print(v.element() + " ");
         }
         
     }
@@ -185,6 +184,8 @@ public class LCRSTreeTest {
      */
     @Test
     public void testIsInternal() {
+        
+        System.out.println("isInternal");
         
         Position<Integer> a = instance.add(instance.root, 7);
         Position<Integer> b = instance.add(a, 5);
@@ -200,6 +201,8 @@ public class LCRSTreeTest {
     @Test
     public void testIsLeaf() {
         
+        System.out.println("isLeaf");
+        
         Position<Integer> a = instance.add(instance.root, 7);
         Position<Integer> b = instance.add(a, 5);
         Position<Integer> c = instance.add(a, 8);
@@ -213,6 +216,8 @@ public class LCRSTreeTest {
      */
     @Test
     public void testIsRoot() {
+        
+        System.out.println("isRoot");
         
         Position<Integer> a = instance.add(instance.root, 7);
         Position<Integer> b = instance.add(a, 5);
@@ -228,6 +233,8 @@ public class LCRSTreeTest {
     @Test 
     public void testAdd() {
         
+        System.out.println("add");
+        
         Position<Integer> a = instance.add(instance.root, 7);
         Position<Integer> b = instance.add(a, 5);
         Position<Integer> c = instance.add(a, 8);
@@ -235,6 +242,7 @@ public class LCRSTreeTest {
         List<Position<Integer>> pos = (List<Position<Integer>>) instance.positions();
         
         for(Position<Integer> v : pos){
+            System.out.print(v.element() + " ");
         }
         
         assertTrue(pos.get(1).element()==7);
@@ -248,6 +256,8 @@ public class LCRSTreeTest {
     @Test 
     public void testSwapElements() {
         
+        System.out.println("swapElements");
+        
         Position<Integer> w = instance.add(instance.root, 12);
         
         instance.swapElements(instance.root, w);
@@ -259,6 +269,7 @@ public class LCRSTreeTest {
         List<Position<Integer>> pos = (List<Position<Integer>>) instance.positions();
         
         for(Position<Integer> v : pos){
+            System.out.print(v.element() + " ");
         }
         
         assertTrue(instance.root.element()==12);
@@ -271,6 +282,8 @@ public class LCRSTreeTest {
      */
     @Test 
     public void testRemove() {
+        
+        System.out.println("remove");
         
         Position<Integer> a = instance.add(instance.root, 24);
         Position<Integer> b = instance.add(instance.root, 5);
@@ -288,6 +301,7 @@ public class LCRSTreeTest {
         List<Position<Integer>> pos = (List<Position<Integer>>) instance.positions();
         
         for(Position<Integer> v : pos){
+            System.out.print(v.element() + " ");
         }
         
         //assertTrue(instance.isEmpty());

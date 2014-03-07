@@ -2,11 +2,6 @@ package material.tree.binarytree.arraybinarytree;
 
 import material.tree.Position;
 
-/**
- *
- * @author Asus
- * @param <E>
- */
 public class BTPos<E> implements Position<E> {
 
     //Atributos.
@@ -17,14 +12,6 @@ public class BTPos<E> implements Position<E> {
 
     //Constructores.
     
-    /**
-     *
-     * @param element
-     * @param index
-     * @param left
-     * @param right
-     * @param parent
-     */
     public BTPos(E element, int index, int left, int right, int parent) {
         this.element = element;
         this.index = index;
@@ -33,11 +20,6 @@ public class BTPos<E> implements Position<E> {
         this.parent = parent;
     }
     
-    /**
-     *
-     * @param elt
-     * @param i
-     */
     public BTPos(E elt, int i) {
         this(elt, i, -1, -1, -1);
     }
@@ -103,18 +85,10 @@ public class BTPos<E> implements Position<E> {
         parent = v;
     }
 
-    /**
-     *
-     * @return
-     */
     public int index() {
         return index;
     }
 
-    /**
-     *
-     * @param i
-     */
     public void setIndex(int i) {
         index = i;
     }

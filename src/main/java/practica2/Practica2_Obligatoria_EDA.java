@@ -5,10 +5,6 @@ import java.util.List;
 import material.tree.Position;
 import material.tree.binarytree.arraybinarytree.ArrayBinaryTree;
 
-/**
- *
- * @author Asus
- */
 public class Practica2_Obligatoria_EDA {
 
     private static ArrayBinaryTree<Double> arbolDecision;
@@ -113,6 +109,7 @@ public class Practica2_Obligatoria_EDA {
 
         System.out.println("\nEl alumno con expediente " + alumno.getExpediente()
                 + " ha obtenido la calificación (" + notaFinal + ") y esta " + calificacion + ".\n");
+        System.out.println("Informe:");
 
         double minimo;
 
@@ -143,7 +140,14 @@ public class Practica2_Obligatoria_EDA {
 
             superada = (superadas[3]) ? "Prueba superada" : "Prueba NO superada";
 
+            System.out.println("Ejercicios voluntarios. " + superada + ": " + alumno.getVoluntarios() + " ("
+                    + minimo + ")\n");
+
         } catch (IndexOutOfBoundsException ex) {
+
+            System.out.println("\nEl alumno no pudo realizar algunas pruebas por no superar "
+                    + "las anteriores.\n");
+
         }
 
     }
@@ -175,10 +179,6 @@ public class Practica2_Obligatoria_EDA {
 
     }
 
-    /**
-     *
-     * @param args
-     */
     public static void main(String[] args) {
         arbolDecision = new ArrayBinaryTree<>();
         generarArbolDecision(arbolDecision);

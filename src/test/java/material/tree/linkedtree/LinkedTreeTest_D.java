@@ -4,17 +4,10 @@ import material.tree.Position;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
-/**
- *
- * @author Asus
- */
 public class LinkedTreeTest_D {
 
 
-	/**
-     *
-     */
-    @Test
+	@Test
 	public void testSize() {
 		LinkedTree <String> t = new LinkedTree <>();
 		Position <String> p = t.addRoot("+");
@@ -25,19 +18,13 @@ public class LinkedTreeTest_D {
 		assertEquals(t.size(), 5);
 	}
 
-	/**
-     *
-     */
-    @Test
+	@Test
 	public void testIsEmpty() {
 		LinkedTree <String> t = new LinkedTree <>();
 		assertEquals(t.isEmpty(), true);
 	}
 
-	/**
-     *
-     */
-    @Test
+	@Test
 	public void testPositions() {
 		LinkedTree <String> t = new LinkedTree <>();
 		Position <String> p = t.addRoot("+");
@@ -50,10 +37,7 @@ public class LinkedTreeTest_D {
 		assertEquals(salida, "+23");
 	}
 
-	/**
-     *
-     */
-    @Test
+	@Test
 	public void testRemove() {
 		LinkedTree <String> t = new LinkedTree <>();
 		Position <String> p = t.addRoot("+");
@@ -66,10 +50,7 @@ public class LinkedTreeTest_D {
 		
 	}
 
-	/**
-     *
-     */
-    @Test
+	@Test
 	public void testSwapElements() {
 		LinkedTree <String> t = new LinkedTree <>();
 		Position <String> p = t.addRoot("+");

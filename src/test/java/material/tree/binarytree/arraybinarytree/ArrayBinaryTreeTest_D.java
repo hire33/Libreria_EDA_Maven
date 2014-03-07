@@ -5,16 +5,9 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 
-/**
- *
- * @author Asus
- */
 public class ArrayBinaryTreeTest_D {
 
-	/**
-     *
-     */
-    @Test
+	@Test
 	public void testSize() {
 		ArrayBinaryTree <String> t = new ArrayBinaryTree <>();
 		Position <String> p = t.addRoot("+");
@@ -25,19 +18,13 @@ public class ArrayBinaryTreeTest_D {
 		assertEquals(t.size(), 5);
 	}
 
-	/**
-     *
-     */
-    @Test
+	@Test
 	public void testIsEmpty() {
 		ArrayBinaryTree <String> t = new ArrayBinaryTree <>();
 		assertEquals(t.isEmpty(), true);
 	}
 
-	/**
-     *
-     */
-    @Test
+	@Test
 	public void testHasLeft() {
 		ArrayBinaryTree <String> t = new ArrayBinaryTree <>();
 		Position <String> p = t.addRoot("+");
@@ -46,10 +33,7 @@ public class ArrayBinaryTreeTest_D {
 		assertEquals(t.hasLeft(q), false);
 	}
 
-	/**
-     *
-     */
-    @Test
+	@Test
 	public void testPositions() {
 		ArrayBinaryTree <String> t = new ArrayBinaryTree <>();
 		Position <String> p = t.addRoot("+");
@@ -62,10 +46,7 @@ public class ArrayBinaryTreeTest_D {
 		assertEquals(salida, "+23");
 	}
 
-	/**
-     *
-     */
-    @Test
+	@Test
 	public void testRemove() {
 		ArrayBinaryTree <String> t = new ArrayBinaryTree <>();
 		Position <String> p = t.addRoot("+");
@@ -82,10 +63,7 @@ public class ArrayBinaryTreeTest_D {
 		assertEquals(t.size(), 4);
 	}
 
-	/**
-     *
-     */
-    @Test
+	@Test
 	public void testRemoveInternal() {
 		ArrayBinaryTree <String> t = new ArrayBinaryTree <>();
 		Position <String> p = t.addRoot("+");
@@ -104,10 +82,7 @@ public class ArrayBinaryTreeTest_D {
 	}
 
 	
-	/**
-     *
-     */
-    @Test
+	@Test
 	public void testSwapElements() {
 		ArrayBinaryTree <String> t = new ArrayBinaryTree <>();
 		Position <String> p = t.addRoot("+");

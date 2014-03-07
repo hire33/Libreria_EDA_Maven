@@ -2,18 +2,10 @@ package material.tree.binarysearchtree;
 
 import material.tree.binarytree.linkedbinarytree.BTNode;
 
-/**
- *
- * @author Asus
- * @param <E>
- */
 public class AVLNode<E> extends BTNode<E> {
 
     //Atributos.
     
-    /**
-     *
-     */
     protected int height; // we add a height field to a BTNode
 
     //Constructores.
@@ -34,18 +26,10 @@ public class AVLNode<E> extends BTNode<E> {
 
     //Getter & Setter.
     
-    /**
-     *
-     * @param h
-     */
     public void setHeight(int h) {
         height = h;
     }
 
-    /**
-     *
-     * @return
-     */
     public int getHeight() {
         return height;
     }

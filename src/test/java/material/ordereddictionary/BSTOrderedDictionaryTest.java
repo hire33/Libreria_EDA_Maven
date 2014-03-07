@@ -8,42 +8,23 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-/**
- *
- * @author Asus
- */
 public class BSTOrderedDictionaryTest {
     
     private BSTOrderedDictionary<Integer, String> instance;
     
-    /**
-     *
-     */
     public BSTOrderedDictionaryTest() {}
     
-    /**
-     *
-     */
     @BeforeClass
     public static void setUpClass() {}
     
-    /**
-     *
-     */
     @AfterClass
     public static void tearDownClass() {}
     
-    /**
-     *
-     */
     @Before
     public void setUp() {
         instance = new BSTOrderedDictionary();
     }
     
-    /**
-     *
-     */
     @After
     public void tearDown() {}
 
@@ -52,6 +33,8 @@ public class BSTOrderedDictionaryTest {
      */
     @Test
     public void testSize() {
+        
+        System.out.println("size");
                 
         instance.insert(20, "hola");
         instance.insert(40, "iglu");
@@ -65,6 +48,8 @@ public class BSTOrderedDictionaryTest {
      */
     @Test
     public void testIsEmpty() {
+        
+        System.out.println("isEmpty");
 
         assertTrue(instance.isEmpty());
         
@@ -92,6 +77,8 @@ public class BSTOrderedDictionaryTest {
         
         Entry prueba = instance.find(40);
         
+        System.out.println("Entrada buscada: " + prueba);
+        
     }
 
     /**
@@ -109,6 +96,10 @@ public class BSTOrderedDictionaryTest {
         instance.insert(50, "mano");
         
         System.out.println(instance.entries());
+        
+        //Uso del método toString por defecto.
+        
+        System.out.println("Entrada buscadas: " + instance.findAll(40));
     
     }
     
@@ -127,6 +118,10 @@ public class BSTOrderedDictionaryTest {
         instance.insert(50, "mano");
         
         System.out.println(instance.entries());
+        
+        //Uso del método toString por defecto.
+        
+        System.out.println("Entradas buscadas: " + instance.findRange(12, 42));
     
     }
 
@@ -143,6 +138,8 @@ public class BSTOrderedDictionaryTest {
         instance.insert(40, "iglu");
         instance.insert(40, "isla");
         instance.insert(50, "mano");
+                
+        System.out.println(instance.entries());
         
     }
 
@@ -167,6 +164,8 @@ public class BSTOrderedDictionaryTest {
         instance.remove(tR2);
         System.out.println("Entrada borrada: " + tR2);
         
+        System.out.println(instance.entries());
+        
     }
 
     /**
@@ -182,6 +181,8 @@ public class BSTOrderedDictionaryTest {
         instance.insert(40, "iglu");
         instance.insert(40, "isla");
         instance.insert(50, "mano");
+                
+        System.out.println(instance.entries());
         
     }
 

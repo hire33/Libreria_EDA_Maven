@@ -21,7 +21,7 @@ abstract class AbstractTreeOrderedDictionary<K,V> implements OrderedDictionary<K
    
     //Constructores.
     
-    AbstractTreeOrderedDictionary (BinarySearchTree<BSTDictEntry<K,V>> binTree){
+    public AbstractTreeOrderedDictionary (BinarySearchTree<BSTDictEntry<K,V>> binTree){
         this.binTree = binTree;
         this.size = 0;
     }

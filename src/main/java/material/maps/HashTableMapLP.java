@@ -3,36 +3,18 @@ package material.maps;
 import java.util.List;
 import material.maps.exceptions.InvalidKeyException;
 
-/**
- *
- * @author Asus
- * @param <K>
- * @param <V>
- */
 public class HashTableMapLP <K,V> extends AbstractHashTableMap <K,V> {
     
     //Constructores.
     
-    /**
-     *
-     */
     public HashTableMapLP(){
         super();
     }
     
-    /**
-     *
-     * @param cap
-     */
     public HashTableMapLP(int cap){
         super(cap);   
     }
     
-    /**
-     *
-     * @param p
-     * @param cap
-     */
     public HashTableMapLP(int p, int cap){
         super(p, cap);
     }

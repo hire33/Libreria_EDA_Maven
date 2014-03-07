@@ -1,7 +1,6 @@
 package material.tree.binarysearchtree;
 
 import java.util.Comparator;
-import java.util.logging.Logger;
 import material.tree.Position;
 import material.tree.exceptions.InvalidPositionException;
 
@@ -14,20 +13,10 @@ public class RBTree<E> extends BinarySearchTree<E> {
 
     //Constructores.
     
-    /**
-     *
-     * @param nodeFactory
-     */
     public RBTree(FactoryRBNode<E> nodeFactory) {
         super(nodeFactory);
     }
 
-    /**
-     *
-     * @param c1
-     * @param c2
-     * @param nodeFactory
-     */
     public RBTree(Comparator<E> c1, Comparator<E> c2, FactoryRBNode<E> nodeFactory) {
         super(c1, c2, nodeFactory);
     }
@@ -250,5 +239,4 @@ public class RBTree<E> extends BinarySearchTree<E> {
         }
         return (RBNode<E>) p;
     }
-    private static final Logger LOG = Logger.getLogger(RBTree.class.getName());
 }

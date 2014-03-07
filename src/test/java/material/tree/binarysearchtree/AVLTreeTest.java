@@ -9,43 +9,24 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-/**
- *
- * @author Asus
- */
 public class AVLTreeTest {
     
     private BinarySearchTree<Integer> instance;
     
-    /**
-     *
-     */
     public AVLTreeTest() {
     }
     
-    /**
-     *
-     */
     @BeforeClass
     public static void setUpClass() {}
     
-    /**
-     *
-     */
     @AfterClass
     public static void tearDownClass() {}
     
-    /**
-     *
-     */
     @Before
     public void setUp() {
         instance = new AVLTree <>(new FactoryAVLNode<Integer>());
     }
     
-    /**
-     *
-     */
     @After
     public void tearDown() {}
 
@@ -68,10 +49,13 @@ public class AVLTreeTest {
         instance.binTree.preorderPositions(instance.binTree.root(), posP);
         
         for(Position<Integer> v : posI){
+            System.out.print(v.element() + " ");
         }
         System.out.print("\nComprobando la reestructuracion...\n");
         for(Position<Integer> v : posP){
+            System.out.print(v.element() + " ");
         }
+        System.out.println("\n");
          
     }
 
@@ -94,9 +78,11 @@ public class AVLTreeTest {
         instance.binTree.preorderPositions(instance.binTree.root(), posP);
         
         for(Position<Integer> v : posI){
+            System.out.print(v.element() + " ");
         }
         System.out.print("\nComprobando la reestructuracion...\n");
         for(Position<Integer> v : posP){
+            System.out.print(v.element() + " ");
         }
         System.out.println("\n");
         
@@ -107,10 +93,13 @@ public class AVLTreeTest {
         instance.binTree.preorderPositions(instance.binTree.root(), posP);
         
         for(Position<Integer> v : posI){
+            System.out.print(v.element() + " ");
         }
         System.out.print("\nComprobando la reestructuracion...\n");
         for(Position<Integer> v : posP){
+            System.out.print(v.element() + " ");
         }
+        System.out.println("\n");
     
     }
 

@@ -10,26 +10,12 @@ import material.tree.exceptions.EmptyTreeException;
 import material.tree.exceptions.InvalidPositionException;
 import material.tree.exceptions.NonEmptyTreeException;
 
-/**
- *
- * @author Asus
- * @param <E>
- */
 public class LinkedBinaryTree<E> implements BinaryTree<E> {
 
     //Atributos.
     
-    /**
-     *
-     */
     protected BTNode<E> root; // reference to the root
-    /**
-     *
-     */
     protected int size; // number of nodes
-    /**
-     *
-     */
     protected FactoryNode<E> nodeFactory;
 
     //Constructores.
@@ -354,10 +340,6 @@ public class LinkedBinaryTree<E> implements BinaryTree<E> {
         this.size = size + sizeLeft + sizeRight;  
     }
     
-    /**
-     *
-     * @param newRoot
-     */
     public void changeRoot (Position<E> newRoot){
         this.root=this.checkPosition(newRoot);
     }

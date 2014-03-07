@@ -1,7 +1,6 @@
 package material.tree.binarysearchtree;
 
 import java.util.Comparator;
-import java.util.logging.Logger;
 import material.tree.Position;
 import material.tree.exceptions.InvalidPositionException;
 
@@ -16,20 +15,10 @@ public class AVLTree<E> extends BinarySearchTree<E> {
 
     //Constructores.
     
-    /**
-     *
-     * @param nodeFactory
-     */
     public AVLTree(FactoryAVLNode<E> nodeFactory) {
         super(nodeFactory);
     }
 
-    /**
-     *
-     * @param c1
-     * @param c2
-     * @param nodeFactory
-     */
     public AVLTree(Comparator<E> c1, Comparator<E> c2, FactoryAVLNode<E> nodeFactory) {
         super(c1, c2, nodeFactory);
     }
@@ -139,6 +128,7 @@ public class AVLTree<E> extends BinarySearchTree<E> {
             zPos = this.binTree.parent(zPos);
             setHeight(zPos);
             if (!isBalanced(zPos)) {
+                System.out.println("Reestructuring...");
                 
                 // perform a trinode restructuring at zPos's tallest grandchild
                                 
@@ -151,6 +141,5 @@ public class AVLTree<E> extends BinarySearchTree<E> {
             }
         }
     }
-    private static final Logger LOG = Logger.getLogger(AVLTree.class.getName());
 }
 

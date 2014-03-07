@@ -10,22 +10,11 @@ import material.tree.exceptions.EmptyTreeException;
 import material.tree.exceptions.InvalidPositionException;
 import material.tree.exceptions.NonEmptyTreeException;
 
-/**
- *
- * @author Asus
- * @param <E>
- */
 public class LinkedTree<E> implements Tree<E> {
     
     //Atributos.
     
-    /**
-     *
-     */
     protected TreeNode<E> root; // reference to the root
-    /**
-     *
-     */
     protected int size; // number of nodes
 
     //Constructores.
@@ -180,13 +169,6 @@ public class LinkedTree<E> implements Tree<E> {
         return newNode;
     }
     
-    /**
-     *
-     * @param element
-     * @param posParent
-     * @return
-     * @throws InvalidPositionException
-     */
     public Position<E> add(E element, Position<E> posParent)
         throws InvalidPositionException {
         return this.add(posParent, element);

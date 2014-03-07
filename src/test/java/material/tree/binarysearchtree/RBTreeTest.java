@@ -9,43 +9,24 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-/**
- *
- * @author Asus
- */
 public class RBTreeTest {
     
     private BinarySearchTree<Integer> instance;
     
-    /**
-     *
-     */
     public RBTreeTest() {
     }
     
-    /**
-     *
-     */
     @BeforeClass
     public static void setUpClass() {}
     
-    /**
-     *
-     */
     @AfterClass
     public static void tearDownClass() {}
     
-    /**
-     *
-     */
     @Before
     public void setUp() {
         instance = new RBTree <>(new FactoryRBNode<Integer>());
     }
     
-    /**
-     *
-     */
     @After
     public void tearDown() {}
 
@@ -92,10 +73,13 @@ public class RBTreeTest {
         for(Position<Integer> v : posI){
             RBNode<Integer> nodeAtV = (RBNode) instance.checkPosition(v);
             char isRed = nodeAtV.isRed()?'R':'B';
+            System.out.print(v.element() + "[" + isRed + "]" + " ");
         }
         System.out.print("\nComprobando reestructuraciones...\n");
         for(Position<Integer> v : posP){
+            System.out.print(v.element() + " ");
         }
+        System.out.println("\n");       
     
     }
 
